@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌗 Fondo y texto global */
+body {
+  @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+
+/* 🧩 Encabezados */
+h1, h2, h3, h4 {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+/* 📄 Párrafos */
+p {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+/* 📊 Tablas */
+table {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+/* ===============================
+   🎨 Calendario Flatpickr Compacto
+   =============================== */
+.flatpickr-calendar {
+  font-size: 0.8rem !important;       /* reduce tamaño de fuente */
+  transform: scale(0.9);              /* hace más pequeño el calendario */
+  transform-origin: top left;         /* mantiene buena posición */
+  border-radius: 0.5rem !important;   /* bordes más suaves */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Días compactos */
+.flatpickr-day {
+  max-width: 28px !important;
+  height: 28px !important;
+  line-height: 28px !important;
+  font-size: 0.75rem !important;
+  border-radius: 6px !important;
+}
+
+/* Mes y año más pequeños */
+.flatpickr-months .flatpickr-month {
+  font-size: 0.8rem !important;
+}
+
+/* Controles de hora */
+.flatpickr-time input {
+  font-size: 0.75rem !important;
+  height: 24px !important;
+}
+
+/* 🔵 Colores integrados con Tailwind (modo claro y oscuro) */
+.flatpickr-calendar {
+  @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  @apply bg-sky-500 text-white;
+}
+
+.flatpickr-day:hover {
+  @apply bg-sky-100 dark:bg-gray-700;
+}
