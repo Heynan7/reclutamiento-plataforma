@@ -52,8 +52,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
             ->whereNumber('id')->name('jobs.restore');
 
         // Imagen desde Supabase (solo vista admin)
-        Route::get('/jobs/{job}/image', [JobController::class, 'viewImage'])
-            ->whereNumber('job')->name('jobs.image');
+        // Route::get('/jobs/{job}/image', [JobController::class, 'viewImage'])
+        //     ->whereNumber('job')->name('jobs.image');
 
         // 👥 Postulantes de una vacante
         Route::get('/jobs/{job}/applications', [ApplicationController::class, 'byJob'])
@@ -151,6 +151,10 @@ Route::get('/s/applications/{application}', [ApplicationController::class, 'show
 // ============================
 Route::get('/user/jobs/{job}/image', [UserJobController::class, 'viewImage'])
     ->whereNumber('job')->name('user.jobs.image');
+
+Route::get('/admin/jobs/{job}/image', [App\Http\Controllers\JobController::class, 'viewImage'])
+    ->whereNumber('job')->name('admin.jobs.image');
+
 
 // ============================
 // 🔐 Login con Firebase (Google)
