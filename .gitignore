@@ -42,3 +42,5 @@ Thumbs.db
 # ░░░ ARCHIVOS DE HOMESTEAD (si no lo usas) ░░░
 Homestead.json
 Homestead.yaml
+storage/firebase/plataformaia-firebase-adminsdk.json
+storage/firebase/plataformaia-firebase-adminsdk.json
