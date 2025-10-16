@@ -44,3 +44,7 @@ Homestead.json
 Homestead.yaml
 storage/firebase/plataformaia-firebase-adminsdk.json
 storage/firebase/plataformaia-firebase-adminsdk.json
+storage/firebase/
+storage/app/firebase/
+*.json
+*.pem
