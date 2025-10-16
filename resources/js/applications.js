@@ -85,7 +85,11 @@ document.querySelectorAll('.open-analysis').forEach(btn => {
       (data.motivos || []).map(m => `<li>${m}</li>`).join('') || '<li>No hay motivos</li>';
 
     document.getElementById('analysisObs').innerText = data.observaciones || '';
-    document.getElementById('analysisRaw').innerText = JSON.stringify(data, null, 2);
+    const rawEl = document.getElementById('analysisRaw');
+if (rawEl) {
+  rawEl.innerText = JSON.stringify(data, null, 2);
+}
+
 
     modal.classList.remove('hidden');
     modal.classList.add('flex');

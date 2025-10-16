@@ -72,4 +72,11 @@
 
     {{-- 🧠 Script (sin cambios) --}}
     @vite('resources/js/applications.js')
+
+{{-- ✅ Modal del análisis IA --}}
+@include('components.applications.modal-analysis')
+
+{{-- ✅ Script que controla los modales y acciones --}}
+@vite(['resources/js/applications.js'])
+
 </x-app-layout>

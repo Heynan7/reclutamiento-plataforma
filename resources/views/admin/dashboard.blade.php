@@ -5,8 +5,8 @@
                 <h2 class="font-semibold text-xl sm:text-2xl text-gray-800 dark:text-gray-100 leading-tight">
                     Panel de Administrador
                 </h2>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    Bienvenido, <span class="font-medium">{{ auth()->user()->name }}</span>. Gestiona vacantes y monitorea la actividad.
+               	<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                 Bienvenido al Panel de Administración 👋
                 </p>
             </div>
 
@@ -55,8 +55,11 @@
             <div class="rounded-2xl border border-gray-200/70 dark:border-gray-800/70
                         bg-white/80 dark:bg-gray-900/70 backdrop-blur shadow-sm p-6">
                 <p class="text-gray-700 dark:text-gray-300">
-                    <span class="font-semibold">Bienvenido, Melvin Gomez.</span> Aquí puedes publicar y gestionar vacantes.
-                </p>
+    <span class="font-semibold">
+        Bienvenido, {{ auth()->user()->name }}.
+    </span> Aquí puedes publicar, gestionar o revisar las vacantes activas.
+</p>
+
             </div>
 
             <!-- Acciones rápidas (tarjetas) -->

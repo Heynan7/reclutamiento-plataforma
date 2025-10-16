@@ -78,6 +78,37 @@
                             <span class="ml-3">Registrarse</span>
                         </button>
 
+<!-- Divider -->
+<div class="flex items-center my-4">
+    <hr class="flex-grow border-gray-300">
+    <span class="px-2 text-gray-500 text-xs">o</span>
+    <hr class="flex-grow border-gray-300">
+</div>
+
+            <!-- Botón Google con loader -->
+                        <button id="btn-google" type="button"
+                            onclick="startGoogleLogin()"
+                            class="w-full flex items-center justify-center gap-2 py-2.5 px-4 border border-gray-300 rounded-lg bg-white text-gray-700 font-medium text-sm shadow-sm hover:bg-gray-50 transition-all duration-200">
+                            <svg id="google-icon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                <path fill="#FFC107"
+                                    d="M43.6 20.1H42V20H24v8h11.3c-1.4 4-5.3 6.9-9.3 6.9-6.6 
+                                    0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 
+                                    3l5.7-5.7C34 5.1 29.3 3 24 
+                                    3 12.9 3 4 11.9 4 23s8.9 
+                                    20 20 20c11 0 20-8.9 
+                                    20-20 0-1.4-.1-2.7-.4-3.9z"/>
+                            </svg>
+                            <span id="google-text">Continuar con Google</span>
+                                                        <!-- Loader -->
+                            <svg id="google-loader" class="hidden w-5 h-5 animate-spin text-gray-700"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10"
+                                    stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"></path>
+                            </svg>
+                        </button>
+
                         <!-- Ya registrado -->
                         <div class="mt-4 text-center">
                             <a class="text-sm text-gray-600 hover:text-gray-900 underline" href="{{ route('login') }}">
@@ -95,4 +126,5 @@
             </div>
         </div>
     </div>
+
 </x-guest-layout>

@@ -12,16 +12,26 @@ class CvTextExtractor
         $path = storage_path("app/tmp/{$cvFile}");
         @mkdir(dirname($path), 0777, true);
 
+        /**
+         * 🧩 Construcción robusta de la URL (con fallback)
+         * Evita el error "Could not resolve host: storage"
+         */
+        $baseUrl = rtrim(env('SUPABASE_URL', 'https://zescvmlacfujcgmjcskq.supabase.co'), '/');
+        $bucket  = env('SUPABASE_BUCKET', 'cvs');
+        $url     = "{$baseUrl}/storage/v1/object/{$bucket}/" . ltrim($cvFile, '/');
+
         // 📥 Descargar desde Supabase
         $response = Http::withHeaders([
             'apikey'        => env('SUPABASE_SERVICE_ROLE'),
             'Authorization' => 'Bearer ' . env('SUPABASE_SERVICE_ROLE'),
-        ])->get(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET') . '/' . $cvFile);
+        ])->get($url);
 
         if ($response->failed()) {
-            \Log::error("No se pudo descargar el CV desde Supabase", [
+            \Log::error("❌ No se pudo descargar el CV desde Supabase", [
+                'url'    => $url,
                 'cvFile' => $cvFile,
                 'status' => $response->status(),
+                'body'   => $response->body(),
             ]);
             return '';
         }
@@ -29,7 +39,7 @@ class CvTextExtractor
         file_put_contents($path, $response->body());
 
         // ⚡ Ruta al binario pdftotext (desde .env, con fallback a "pdftotext")
-        $pdftotextPath = env('PDFTOTEXT_PATH', 'pdftotext');
+        $pdftotextPath = config('pdf.pdftotext_path', '/usr/bin/pdftotext');
 
         if (str_ends_with(strtolower($cvFile), '.pdf')) {
             try {
@@ -49,3 +59,4 @@ class CvTextExtractor
         return '';
     }
 }
+

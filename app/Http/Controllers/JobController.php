@@ -266,24 +266,21 @@ class JobController extends Controller
      * GET /admin/jobs/{job}/image
      * Devuelve la imagen almacenada en Supabase.
      */
-public function viewImage(Job $job)
+public function viewImage(\App\Models\Job $job)
 {
     if (!$job->image) {
         abort(404, 'La vacante no tiene imagen.');
     }
 
-    // 🔹 Como tu bucket tiene la carpeta jobs/, no hacemos str_replace
+    // ✅ Tu bucket "jobs" tiene una carpeta interna "jobs/"
     $path = ltrim($job->image, '/');
 
-    // 🔹 Construimos la URL pública completa (nota el /public/jobs/jobs/)
     $publicUrl = rtrim(env('SUPABASE_URL'), '/') .
         '/storage/v1/object/public/' .
         env('SUPABASE_BUCKET_JOBS', 'jobs') . '/' . $path;
 
     return redirect()->away($publicUrl);
 }
-
-
 
 
     /* =========================================================
@@ -297,7 +294,7 @@ public function viewImage(Job $job)
         }
     }
 
-    private function supabaseHeaders(): array
+        private function supabaseHeaders(): array
     {
         $token = env('SUPABASE_SERVICE_ROLE');
         return [
