@@ -396,30 +396,67 @@ public function updateStatus(Request $request, Application $application)
     /**
      * 🔎 Panel candidato (detalle con login)
      */
-    public function show(Application $application)
-    {
-        if ($application->user_id !== Auth::id()) abort(403);
+public function show(Application $application)
+{
+    if ($application->user_id !== Auth::id()) abort(403);
 
-        if (Schema::hasColumn('applications', 'read_at') && is_null($application->read_at)) {
-            $application->update(['read_at' => now()]);
-        }
-
-        return view('user.applications.show', compact('application'));
+    if (Schema::hasColumn('applications', 'read_at') && is_null($application->read_at)) {
+        $application->update(['read_at' => now()]);
     }
 
-    /**
-     * 🔗 Detalle con link firmado (solo lectura)
-     */
-    public function showSigned(Request $request, Application $application)
-    {
-        abort_unless($request->hasValidSignature(), 403);
-
-        if (Schema::hasColumn('applications', 'read_at') && is_null($application->read_at)) {
-            $application->update(['read_at' => now()]);
+    // ✅ Aquí declaramos la función que la vista está intentando usar
+    $renderLink = function ($url) {
+        if (!$url) {
+            return ['No disponible', null];
         }
 
-        return view('user.applications.show', compact('application'));
+        if (filter_var($url, FILTER_VALIDATE_URL)) {
+            // Ejemplo: https://drive.google.com → host: drive.google.com
+            $host = parse_url($url, PHP_URL_HOST) ?? 'Abrir enlace';
+            return [$host, $url];
+        }
+
+        // Si no es URL, solo texto
+        return [$url, null];
+    };
+
+    // ✅ Se envía también a la vista
+    return view('user.applications.show', [
+        'application' => $application,
+        'renderLink'  => $renderLink
+    ]);
+}
+
+
+/**
+ * 🔗 Detalle con link firmado (solo lectura)
+ */
+public function showSigned(Request $request, Application $application)
+{
+    abort_unless($request->hasValidSignature(), 403);
+
+    if (Schema::hasColumn('applications', 'read_at') && is_null($application->read_at)) {
+        $application->update(['read_at' => now()]);
     }
+
+    // ✅ Función para procesar enlaces (igual que en show())
+    $renderLink = function ($url) {
+        if (!$url) return ['No disponible', null];
+
+        // Si es una URL válida, devolvemos host y URL
+        if (filter_var($url, FILTER_VALIDATE_URL)) {
+            return [parse_url($url, PHP_URL_HOST) ?? 'Abrir enlace', $url];
+        }
+
+        // Si no es URL (texto plano)
+        return [$url, null];
+    };
+
+    return view('user.applications.show', [
+        'application' => $application,
+        'renderLink'  => $renderLink
+    ]);
+}
 
     /**
      * 📅 Confirmar disponibilidad (aceptar/declinar)

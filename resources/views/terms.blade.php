@@ -34,7 +34,7 @@
 
                 <div class="blue_border bg-white dark:bg-gray-900 border border-black rounded-xl p-6 sm:p-8">
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">
-                        Bienvenido a <strong>ReclutAI</strong>.
+                        Bienvenido a <strong>wr consultorias</strong>.
                     </p>
                     <p class="text-xs text-gray-500 dark:text-gray-500 mb-6">
                         Última actualización: {{ now()->format('d/m/Y') }}
