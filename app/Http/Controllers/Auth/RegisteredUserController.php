@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name'     => $data['name'],
             'email'    => $data['email'],
-            'phone'    => $data['phone'],        // 👈 ahora sí se guarda
+            'phone'    => $data['phone'],
             'password' => Hash::make($data['password']),
             'role'     => 'user',               // ajusta si tu default no es admin
             'cv_file'  => null,

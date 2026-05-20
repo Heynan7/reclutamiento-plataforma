@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Services\CvAnalyzer;// 👈 corregido (App con A mayúscula)
+use App\Services\CvAnalyzer;
 
 class TestCvAnalyzer extends Command
 {
