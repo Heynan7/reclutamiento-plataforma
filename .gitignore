@@ -39,7 +39,7 @@ yarn-error.log
 .DS_Store
 Thumbs.db
 
-# ░░░ ARCHIVOS DE HOMESTEAD (si no lo usas) ░░░
+# ░░░ ARCHIVOS DE HOMESTEAD ░░░
 Homestead.json
 Homestead.yaml
 storage/firebase/plataformaia-firebase-adminsdk.json
