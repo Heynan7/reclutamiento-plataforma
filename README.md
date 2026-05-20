@@ -31,7 +31,7 @@ Entre sus funciones principales se incluyen:
 
 Puedes ver una demostración del funcionamiento del sistema en el siguiente enlace:
 
-[Ver video demostrativo en Google Drive](COLOCA_AQUI_EL_LINK_DE_TU_VIDEO)
+[Ver video demostrativo en Google Drive](https://drive.google.com/file/d/1NADWwzkdI7NnkeHdHEmwl5fepGNuuK2R/view?usp=sharing)
 
 ---
 
@@ -49,7 +49,7 @@ Puedes ver una demostración del funcionamiento del sistema en el siguiente enla
 
 ### Postulaciones y candidatos
 
-![Postulaciones](docs/screenshots/postulaciones.png)
+![Postulaciones](docs/screenshots/candidatos.png) 
 
 ### Ranking con Inteligencia Artificial
 
@@ -58,10 +58,6 @@ Puedes ver una demostración del funcionamiento del sistema en el siguiente enla
 ### Módulo psicométrico
 
 ![Psicotest](docs/screenshots/psicotest.png)
-
-### Reportes administrativos
-
-![Reportes](docs/screenshots/reportes.png)
 
 ---
 
