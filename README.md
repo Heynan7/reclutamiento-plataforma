@@ -1,61 +1,281 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# WR Reclutamiento
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Plataforma web de reclutamiento desarrollada para digitalizar y optimizar procesos de selección de personal.  
+El sistema permite publicar vacantes, recibir postulaciones, gestionar candidatos, analizar CVs con Inteligencia Artificial, aplicar pruebas psicométricas y dar seguimiento completo al proceso de contratación.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Vista general del proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+WR Reclutamiento es una aplicación web orientada a consultoras de recursos humanos, empresas de reclutamiento o departamentos internos de talento humano que necesitan centralizar sus procesos de selección.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+El proyecto permite administrar el ciclo completo de reclutamiento, desde la creación de una vacante hasta la contratación o cierre del proceso.
 
-## Learning Laravel
+Entre sus funciones principales se incluyen:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Publicación y administración de vacantes.
+- Registro de candidatos.
+- Postulación a ofertas laborales.
+- Carga y almacenamiento seguro de CVs.
+- Análisis de CVs con Inteligencia Artificial.
+- Ranking automático de candidatos.
+- Gestión de entrevistas.
+- Prueba psicométrica interna.
+- Seguimiento por estados del proceso.
+- Notificaciones automáticas.
+- Reportes administrativos y métricas.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Demo del proyecto
 
-## Laravel Sponsors
+Puedes ver una demostración del funcionamiento del sistema en el siguiente enlace:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+[Ver video demostrativo en Google Drive](COLOCA_AQUI_EL_LINK_DE_TU_VIDEO)
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Capturas del proyecto
 
-## Contributing
+> En esta sección se pueden colocar imágenes del panel administrativo, pantalla de vacantes, postulación, ranking IA, psicotest y reportes.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Panel principal
 
-## Code of Conduct
+![Panel principal](docs/screenshots/dashboard.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Gestión de vacantes
 
-## Security Vulnerabilities
+![Gestión de vacantes](docs/screenshots/vacantes.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Postulaciones y candidatos
 
-## License
+![Postulaciones](docs/screenshots/postulaciones.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Ranking con Inteligencia Artificial
+
+![Ranking IA](docs/screenshots/ranking-ia.png)
+
+### Módulo psicométrico
+
+![Psicotest](docs/screenshots/psicotest.png)
+
+### Reportes administrativos
+
+![Reportes](docs/screenshots/reportes.png)
+
+---
+
+## Objetivo
+
+El objetivo principal del proyecto es construir una solución funcional y escalable para gestionar procesos de reclutamiento de manera más eficiente.
+
+La plataforma busca reducir tareas manuales, mejorar el seguimiento de candidatos y apoyar la toma de decisiones mediante reportes, automatización e Inteligencia Artificial aplicada al análisis de CVs.
+
+---
+
+## Tecnologías utilizadas
+
+### Backend
+
+- Laravel 10
+- PHP 8
+- MySQL
+- Laravel Queues
+- Laravel Notifications
+- Laravel Excel
+
+### Frontend
+
+- Blade
+- Tailwind CSS
+- JavaScript
+- Chart.js
+
+### Almacenamiento
+
+- Supabase Storage
+- Bucket privado para CVs
+- Bucket público para imágenes de vacantes
+
+### Inteligencia Artificial
+
+- OpenAI GPT-4o-mini
+- Análisis de CVs
+- Generación de ranking de candidatos
+- Respuesta estructurada en formato JSON
+
+### Herramientas y entorno
+
+- Composer
+- NPM
+- Vite
+- Git
+- GitHub
+- Supervisor para procesamiento de colas en producción
+
+---
+
+## Funcionalidades principales
+
+### 1. Administración de vacantes
+
+El sistema permite a los administradores crear y gestionar vacantes laborales desde un panel privado.
+
+Funciones incluidas:
+
+- Crear vacantes.
+- Editar información de la vacante.
+- Publicar ofertas.
+- Cerrar procesos.
+- Archivar vacantes.
+- Asociar imágenes a las ofertas laborales.
+
+---
+
+### 2. Postulación de candidatos
+
+Los candidatos pueden visualizar vacantes disponibles y postularse cargando su información y CV.
+
+El sistema registra cada postulación y la asocia a la vacante correspondiente, permitiendo al administrador dar seguimiento al candidato durante todo el proceso.
+
+---
+
+### 3. Gestión del flujo de reclutamiento
+
+Cada postulación puede avanzar por diferentes estados, lo que permite representar un proceso de selección completo.
+
+Estados principales:
+
+| Estado | Descripción |
+|---|---|
+| `submitted` | Postulación recibida |
+| `shortlisted` | Candidato preseleccionado |
+| `interview_scheduled` | Entrevista programada |
+| `psychotest` | Prueba psicométrica asignada |
+| `interview_deep` | Entrevista profunda |
+| `socioeconomic_study` | Estudio socioeconómico |
+| `hired` | Candidato contratado |
+| `rejected` | Candidato no seleccionado |
+| `closed` | Proceso finalizado |
+
+---
+
+### 4. Almacenamiento seguro de CVs
+
+Los CVs se almacenan en Supabase Storage dentro de un bucket privado.
+
+El flujo está diseñado para proteger información sensible:
+
+1. Laravel recibe el archivo del candidato.
+2. Se genera un nombre único para el documento.
+3. El archivo se sube a Supabase Storage.
+4. En la base de datos solo se guarda la referencia del archivo.
+5. La descarga del CV pasa por validación de permisos.
+6. Solo usuarios autorizados pueden acceder al documento.
+
+---
+
+### 5. Ranking de CVs con Inteligencia Artificial
+
+El sistema integra un módulo de análisis de CVs asistido por IA.
+
+Este módulo permite evaluar la afinidad entre el perfil del candidato y los requisitos de una vacante.
+
+El análisis genera:
+
+- Puntuación del candidato sobre 100.
+- Motivos del resultado.
+- Observaciones relevantes.
+- Información de apoyo para el reclutador.
+
+Componentes principales:
+
+- `AnalyzeCvJob`
+- `CvAnalyzer`
+- `Ranking`
+
+El análisis se procesa mediante colas para evitar bloquear la experiencia del usuario.
+
+---
+
+### 6. Módulo psicométrico
+
+La plataforma incluye una prueba psicométrica interna para evaluar candidatos dentro del mismo flujo de reclutamiento.
+
+El módulo permite:
+
+- Mostrar el test al candidato.
+- Registrar respuestas.
+- Calcular puntaje.
+- Evaluar calidad textual.
+- Guardar fecha de finalización.
+- Mostrar resultados al administrador.
+
+Campos principales:
+
+- `psychotest_score`
+- `psychotest_answers`
+- `psychotest_completed_at`
+
+---
+
+### 7. Notificaciones automáticas
+
+El sistema utiliza Laravel Notifications y colas para enviar notificaciones relacionadas con el avance del proceso.
+
+Notificaciones implementadas:
+
+- `ApplicationSubmitted`
+- `ApplicationShortlisted`
+- `InterviewScheduled`
+- `ApplicationClosed`
+
+También se utilizan enlaces firmados temporales para acciones sensibles, como confirmaciones de disponibilidad.
+
+---
+
+### 8. Reportes y métricas
+
+El panel administrativo incluye una sección de reportes para visualizar información clave del proceso de reclutamiento.
+
+Métricas disponibles:
+
+- Vacantes activas.
+- Vacantes cerradas.
+- Vacantes archivadas.
+- Total de postulaciones.
+- Postulaciones por estado.
+- Top de vacantes con más candidatos.
+- Tendencias por día, mes o año.
+- Exportación de información.
+
+Los gráficos se generan con Chart.js y la exportación de datos se trabaja con Laravel Excel.
+
+---
+
+## Arquitectura general
+
+Estructura principal del proyecto:
+
+```txt
+app/
+ ├── Http/
+ │   └── Controllers/
+ │        ├── JobController.php
+ │        ├── ApplicationController.php
+ │        ├── PsychotestController.php
+ │        ├── ReportController.php
+ │        └── Auth/
+ │             └── FirebaseLoginController.php
+ │
+ ├── Models/
+ │   ├── User.php
+ │   ├── Job.php
+ │   ├── Application.php
+ │   └── Ranking.php
+ │
+ └── Notifications/
+      ├── ApplicationSubmitted.php
+      ├── ApplicationShortlisted.php
+      ├── InterviewScheduled.php
+      └── ApplicationClosed.php
